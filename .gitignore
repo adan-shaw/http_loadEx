@@ -1,0 +1,4 @@
+http_load
+.vscode
+*.o
+*.a
