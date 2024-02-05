@@ -1,0 +1,35 @@
+#
+# 1.http_load 参数简介:
+#
+参数  全称       含义
+-p  -parallel  并发的用户进程数
+-f  -fetches   总计的访问次数
+-r  -rate      含义是每秒的访问频率
+-s  -seconds   连续的访问时间
+
+url            网站连接地址/url文件(最后一个参数, 不能省缺)
+
+其中, "url"是http_load-12mar2006目录下其中一个文件, 
+在使用前, 先在http_load-12mar2006新建一个空白的名为urls.txt的文件, 使用vi命令新建;
+urls.txt文件, 每个URL一行, 且不能有空行, 否则报错;
+
+
+
+#
+# 2.http_load使用方式demo:
+#
+
+# 100个并发执行10000次
+http_load -parallel 100 -fetches 10000
+
+# 100个并发执行1小时
+http_load -parallel 100 -seconds 3600
+
+# 每秒100个请求频率, 请求10000次
+http_load -rate 100 -fetches 10000
+
+# 每秒100个请求频率执行1小时
+http_load -rate 100 -seconds 3600
+
+
+
